@@ -12,18 +12,18 @@ for i in range(2019, 2022):
   F=int(input("Total Number of faculty Members in the department "))
   S=u1+u2+u3+p1+p2
   SFR=S/F
-  revolution[i]=float(SFR)
-  revolution["u1"]=u1
-  revolution["u2"]=u2
-  revolution["u3"]=u3
-  revolution["p1"]=p1
-  revolution["p2"]=p2
-  revolution["F"]=F
+  revolution[i]={}
+  revolution[i]['sfr']=float(SFR)
+  revolution[i]['u1']=u1
+  revolution[i]['u2']=u2
+  revolution[i]['u3']=u3
+  revolution[i]['p1']=p1
+  revolution[i]['p2']=p2
+  revolution[i]['F']=F
   print("No of students in the department= " +str(S))
   print("Student faculty ratio= " +str(SFR))
-  print(revolution)
   print(" ")
-Avg_SFR=(revolution[2019] + revolution[2020] + revolution[2021])/3
+Avg_SFR=(revolution[2019]['sfr'] + revolution[2020]['sfr'] + revolution[2021]['sfr'])/3
 print("average SFR= " +str(Avg_SFR))
 if Avg_SFR<=15:
   score=20
@@ -39,4 +39,6 @@ elif Avg_SFR<=25:
   score=10
 elif Avg_SFR>25:
   score=0
+revolution["Average SFR="]=Avg_SFR
+print(revolution)
 print("marks=" +str(score))
